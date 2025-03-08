@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tick-Tick Go</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tick-Tick Go</h1>
+            <p>Your Very Own Task Manager</p>
+        </header>
+
+        <div class="app-container">
+            <div class="sidebar">
+                <h2>My Lists</h2>
+                <ul id="lists-container">
+                    <li class="list-item active" data-list-id="default">Default</li>
+                </ul>
+                <div class="add-list-container">
+                    <input type="text" id="new-list-input" placeholder="New list name...">
+                    <button id="add-list-btn">Add List</button>
+                </div>
+            </div>
+
+            <div class="tasks-container">
+                <h2 id="current-list-name">Default</h2>
+                
+                <div class="task-form">
+                    <input type="text" id="task-input" placeholder="Add a new task...">
+                    <input type="datetime-local" id="task-datetime">
+                    <button id="add-task-btn">Add Task</button>
+                </div>
+
+                <div class="filter-options">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+
+                <ul id="tasks-list"></ul>
+            </div>
+        </div>
+
+        <!-- Task Edit Modal -->
+        <div id="edit-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h3>Edit Task</h3>
+                <input type="text" id="edit-task-input">
+                <input type="datetime-local" id="edit-task-datetime">
+                <button id="save-edit-btn">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
